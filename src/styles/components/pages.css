@@ -1,0 +1,91 @@
+/* pages.css */
+
+.userReport-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .userReport-heading {
+    text-align: center;
+    font-size: 24px;
+    color: #1A3A2E;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .userReport-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .userReport-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .userReport-field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .userReport-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .userReport-input,
+  .userReport-select,
+  .userReport-textarea {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    background-color: #F9F9F9;
+    outline: none;
+  }
+  
+  .userReport-select {
+    appearance: none;
+  }
+  
+  .userReport-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .userReport-submitButton {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #A6192E;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .userReport-submitButton:hover {
+    background-color: #8E1725;
+  }
+  .page-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+  .page-body
+  {
+    width: 100%;
+  }
+  
