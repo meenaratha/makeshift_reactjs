@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Card from './components/Card';
 import UserReportPage from './pages/UserReportPage';
+import ProductDescription from './components/ProductDescription';
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/user-report" element={<UserReportPage/>} />
+          <Route path="/description" element={<ProductDescription/>} />
           <Route path="/component" element={<Card/>} />
         </Routes>  
     </Router>

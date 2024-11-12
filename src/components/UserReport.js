@@ -1,9 +1,19 @@
 import React from 'react';
-
+import Profile_pic from '../assets/images/profile_pic.jpg';
+import Profile_Edit from '../assets/images/ant-design_edit-filled.png';
 function UserReport() {
   return (
     <div className="userReport-container">
-      <h2 className="userReport-heading">Report & Queries</h2>
+     <div className="userprofile-box">
+  <div className="userReport-profile">
+    <img src={Profile_pic} alt="" />
+    <input type="file" id="file-input" style={{ display: 'none' }} />
+    <label htmlFor="file-input" className="edit-box">
+      <img src={Profile_Edit} alt="Edit" />
+    </label>
+  </div>
+</div>
+      
       <form className="userReport-form">
         <div className="userReport-row">
           <div className="userReport-field">
@@ -21,19 +31,15 @@ function UserReport() {
             <input type="tel" placeholder="+91 95*****862" className="userReport-input" />
           </div>
           <div className="userReport-field">
-            <label className="userReport-label">Select service</label>
-            <select className="userReport-select">
-              <option>Select service</option>
-              <option>Service 1</option>
-              <option>Service 2</option>
-            </select>
+            <label className="userReport-label">Enter address</label>
+            <input type="text" placeholder="Enter address details" className="userReport-input" />
+
           </div>
         </div>
-        <div className="userReport-field">
-          <label className="userReport-label">Description</label>
-          <textarea placeholder="Enter job details" className="userReport-textarea" />
-        </div>
+        <div className='form-btn-box'>
         <button type="submit" className="userReport-submitButton">Submit</button>
+
+        </div>
       </form>
     </div>
   );

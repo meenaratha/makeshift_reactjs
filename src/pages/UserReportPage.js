@@ -13,7 +13,7 @@ function UserReportPage() {
       <div className='container'>
         <div className='page-container'>
         <Sidebar/>
-        <div className='page-body'>
+        <div className='page-body '>
         <UserReport/>
         </div>
         </div>

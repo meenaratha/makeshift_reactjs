@@ -3,32 +3,17 @@ import HomeLogo from '../assets/logo/header_logo.jpg';
 import ProfilePic from '../assets/images/profile_pic.jpg';
 import React, { useState, useEffect, useRef } from 'react'; // Only one import for React
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from '../store/sidebarSlice';
+
+import { ReactComponent as ProfileIcon } from '../assets/images/gg_profile.svg';
+import { ReactComponent as LogoutIcon } from '../assets/images/solar_logout-3-bold.svg';
+
 function UserboardHeader() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dispatch = useDispatch();
+
+
   const [isSticky, setIsSticky] = useState(false); // State for sticky header
-  const mobilePanelRef = useRef(null);
-
-  // Toggle the mobile menu
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  // Detect clicks outside the mobile panel
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (mobilePanelRef.current && !mobilePanelRef.current.contains(event.target)) {
-        setIsMobileMenuOpen(false); // Close the mobile menu
-      }
-    };
-
-    // Attach the event listener
-    document.addEventListener('mousedown', handleClickOutside);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [mobilePanelRef]);
 
   // Function to check scroll position and set sticky
   useEffect(() => {
@@ -45,6 +30,62 @@ function UserboardHeader() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+
+  const [isLoginPanelOpen, setIsLoginPanelOpen] = useState(false);
+  const loginPanelRef = useRef(null);
+  const toggleLoginPanel = () => {
+    setIsLoginPanelOpen(prevState => !prevState);
+  };
+
+  // Close panel when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (loginPanelRef.current && !loginPanelRef.current.contains(event.target)) {
+        setIsLoginPanelOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+
+  const [searchQuery, setSearchQuery] = useState(''); // State to track the input
+  const [isTyping, setIsTyping] = useState(false); // State to track if the user is typing
+  // Handle change in search input
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setIsTyping(e.target.value.length > 0); // If there's text, hide the icon
+  };
+
+  
+  const [isSearchPanelOpen, setIsSearchPanelOpen] = useState(false);
+  const SearchPanelRef = useRef(null);
+
+  const toggleSearchPanel = () => {
+    setIsSearchPanelOpen(prevState => !prevState);
+  };
+
+// Close the search panel when clicking outside
+useEffect(() => {
+  const handleClickOutsidePanel = (event) => {
+    // Check if the click happened outside the search panel
+    if (SearchPanelRef.current && !SearchPanelRef.current.contains(event.target)) {
+      setIsSearchPanelOpen(false); // Close the search panel
+    }
+  };
+
+  // Adding event listener for clicks outside the panel
+  document.addEventListener('mousedown', handleClickOutsidePanel);
+
+  // Cleanup the event listener when the component is unmounted or re-rendered
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutsidePanel);
+  };
+}, []); // Empty dependency array ensures this runs only once on mount and unmount
+
 
   return (
     <>
@@ -69,26 +110,11 @@ function UserboardHeader() {
                 </li>
               </ul>
 
-              <ul className='navibar mobile-menu-box'>
-                <button className='mobileMenu-open' onClick={toggleMobileMenu}>
+              <ul className='navibar mobile-menu-box' >
+                <button className='mobileMenu-open'  onClick={() => dispatch(toggleSidebar())}>
                   <i className="material-icons">menu</i>
                 </button>
-                {isMobileMenuOpen && (
-                  <ul className='mobile-panel' ref={mobilePanelRef}>
-                    <li className='menu-link-box'>
-                      <i className="material-icons">home</i>
-                      <Link to="#" className="menu-link">Home</Link>
-                    </li>
-                    <li className='menu-link-box'>
-                      <i className="material-icons">category</i>
-                      <Link to="#" className="menu-link">Categories</Link>
-                    </li>
-                    <li className='menu-link-box'>
-                      <i className="material-icons">calendar_today</i>
-                      <Link to="#" className="menu-link">Booking History</Link>
-                    </li>
-                  </ul>
-                )}
+                
               </ul>
 
               <ul className='navibar'>
@@ -111,16 +137,47 @@ function UserboardHeader() {
                     <span className="material-icons">shopping_basket</span>
                   </Link>
                 </li>
-                <li className='menu-link-box'>
-                  <Link to="#" className="menu-link search-menu">
+                 {/* Search Menu */}
+                 <li className='menu-link-box'>
+                  <button className="menu-link search-menu" onClick={toggleSearchPanel}>
                     <span className="material-icons">search</span>
-                  </Link>
+                  </button>
+                  {isSearchPanelOpen && (
+                     
+                      <div className="search-popup-box" ref={SearchPanelRef}>
+                      <input
+                        type="search"
+                        name="search"
+                        value={searchQuery}
+                        placeholder="Search what did you want"
+                        onChange={handleSearchChange} // Update the value as the user types
+                      />
+                      {!isTyping && <i className="material-icons">search</i>} {/* Hide icon when typing */}
+                    </div>
+                     
+                    
+                  )}
                 </li>
 
-                <li className='menu-link-box '>
-                  <button to="#" className="menu-link user-login">
-                     <img src={ProfilePic} alt="" />
+                 {/* User Login Icon */}
+                 <li className='menu-link-box ' ref={loginPanelRef}>
+                  <button onClick={toggleLoginPanel} className="menu-link user-login">
+                    <img src={ProfilePic} alt="Profile" />
                   </button>
+
+                  {/* Login Panel */}
+                  {isLoginPanelOpen && (
+                    <ul className=' login-panel'>
+                      <li className='menu-link-box'>
+                        <ProfileIcon style={{ marginRight: '10px' }} className='menu-icon' />
+                        <Link to="#" className="menu-link">Profile</Link>
+                      </li>
+                      <li className='menu-link-box'>
+                        <LogoutIcon style={{ marginRight: '10px' }} className='menu-icon' />
+                        <Link to="#" className="menu-link">Logout</Link>
+                      </li>
+                    </ul>
+                  )}
                 </li>
               </ul>
             </div>
@@ -128,7 +185,7 @@ function UserboardHeader() {
         </div>
       </header>
 
-      <ul className="footer-mobile-panel" ref={mobilePanelRef}>
+      <ul className="footer-mobile-panel" >
       <li className="menu-link-box">
         <i className="material-icons">home</i>
         <Link to="#" className="menu-link">Home</Link>

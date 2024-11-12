@@ -9,15 +9,18 @@ import { ReactComponent as Policy } from '../assets/images/ic_round-policy.svg';
 import { ReactComponent as Report } from '../assets/images/ic_baseline-report.svg';
 import { ReactComponent as DeleteAccount } from '../assets/images/fluent_person-delete-20-filled.svg';
 
-
+import { useDispatch, useSelector } from 'react-redux';
+import { hideSidebar } from '../store/sidebarSlice';
 
 function Sidebar() {
+    const isSidebarVisible = useSelector((state) => state.sidebar.isSidebarVisible);
+  const dispatch = useDispatch();
   return (
       <>
-      <div className='overlay overlay-hide'>
-      <div class="userboard-sidebar">
+      <div className={`overlay ${isSidebarVisible ? 'overlay-show' : 'overlay-hide'}`} onClick={() => dispatch(hideSidebar())}>
+      <div className={`userboard-sidebar ${isSidebarVisible ? 'userboard-sidebar-show' : ''}`}>
      <div class="userboard-inner-sidebar">
-    <button type="" className='sidebar-back-btn'><i className="material-icons">arrow_back</i>
+    <button type="" className='sidebar-back-btn' onClick={() => dispatch(hideSidebar())}><i className="material-icons">arrow_back</i>
     </button>
     <div class="userboard-profile-image-container">
         <img src="https://i.ibb.co/4Jb8wdS/b0cdee9459cd4162b58b0bbac45e6085.jpg" alt="Profile" class="userboard-profile-image" />
