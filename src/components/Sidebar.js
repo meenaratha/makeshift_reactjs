@@ -14,7 +14,7 @@ import { ReactComponent as DeleteAccount } from '../assets/images/fluent_person-
 function Sidebar() {
   return (
       <>
-      <div className='overlay'></div>
+      <div className='overlay overlay-hide'>
       <div class="userboard-sidebar">
      <div class="userboard-inner-sidebar">
     <button type="" className='sidebar-back-btn'><i className="material-icons">arrow_back</i>
@@ -69,6 +69,8 @@ function Sidebar() {
     </ul>
     </div>
     </div>
+      </div>
+    
       </>
       
    

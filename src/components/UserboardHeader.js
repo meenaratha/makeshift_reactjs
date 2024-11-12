@@ -49,7 +49,7 @@ function UserboardHeader() {
   return (
     <>
        <header className={isSticky ? 'sticky-header' : ''}>
-        <div className='header-box'>
+        <div className='header-box z-index'>
           <div className='container'>
             <div className='header-bg'>
              
@@ -127,6 +127,21 @@ function UserboardHeader() {
           </div>
         </div>
       </header>
+
+      <ul className="footer-mobile-panel" ref={mobilePanelRef}>
+      <li className="menu-link-box">
+        <i className="material-icons">home</i>
+        <Link to="#" className="menu-link">Home</Link>
+      </li>
+      <li className="menu-link-box">
+        <i className="material-icons">category</i>
+        <Link to="#" className="menu-link">Categories</Link>
+      </li>
+      <li className="menu-link-box">
+        <i className="material-icons">calendar_today</i>
+        <Link to="#" className="menu-link">Booking History</Link>
+      </li>
+    </ul>
     </>
   )
 }
