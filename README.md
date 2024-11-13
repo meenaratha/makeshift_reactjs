@@ -72,3 +72,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Redux with tools
 npm install @reduxjs/toolkit react-redux
 
+### Toast alert
+npm install react-toastify
+# or
+yarn add react-toastify
+

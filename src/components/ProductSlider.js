@@ -159,7 +159,7 @@ function ProductSlider() {
                   {/* Card Buttons */}
                   <div className="button-inline">
                     <button className="primary-button">Add to Cart</button>
-                    <button className="secondary-button">View</button>
+                    <button className="secondary-button" id='view-description'>View</button>
                   </div>
                 </div>
               </div>
