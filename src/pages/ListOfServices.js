@@ -3,6 +3,7 @@ import UserHerobanner from '../components/UserHerobanner'
 import Services from '../components/Service';
 import Footer from '../components/Footer';
 import ServiceCard from '../components/ServiceCard';
+import IndustryCategory from '../components/IndustryCategory';
 
 function ListOfServices() {
   return (
@@ -14,7 +15,7 @@ function ListOfServices() {
               <div className='container'>
               <div className='user-page-container'>
           <div className='user-page-item'>
-
+            <IndustryCategory/>
           </div>
            <div className='user-page-item'>
             <ServiceCard/>
