@@ -53,12 +53,12 @@ function Header() {
           <div className='container'>
             <div className='header-bg'>
               <div className='logo-box'>
-                <a href=''><img src={HomeLogo} alt="Home Logo" /></a>
+                <a href='/'><img src={HomeLogo} alt="Home Logo" /></a>
               </div>
               {/* NAVIBAR */}
               <ul className='navibar desktop-menu-box'>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Home</Link>
+                  <Link to="/" className="menu-link">Home</Link>
                 </li>
                 <li className='menu-link-box'>
                   <Link to="#" className="menu-link">Categories</Link>
@@ -76,7 +76,7 @@ function Header() {
                   <ul className='mobile-panel' ref={mobilePanelRef}>
                     <li className='menu-link-box'>
                       <i className="material-icons">home</i>
-                      <Link to="#" className="menu-link">Home</Link>
+                      <Link to="/" className="menu-link">Home</Link>
                     </li>
                     <li className='menu-link-box'>
                       <i className="material-icons">category</i>
@@ -86,13 +86,19 @@ function Header() {
                       <i className="material-icons">calendar_today</i>
                       <Link to="#" className="menu-link">Booking History</Link>
                     </li>
+                    <li className='menu-link-box '>
+                    <i className="material-icons">person</i>
+
+                  <Link to="/login" className="menu-link ">Login</Link>
+                  
+                </li>
                   </ul>
                 )}
               </ul>
 
               <ul className='navibar'>
                 <li className='menu-link-box '>
-                  <Link to="#" className="menu-link login-menu">
+                  <Link to="/login" className="menu-link login-menu">
                     <span className="material-icons">person</span>
                     <span>Login</span>
                     <span className="material-icons">expand_more</span>

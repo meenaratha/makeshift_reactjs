@@ -51,8 +51,8 @@ function Card() {
            </div>
              {/* card Description */}
              <ul className='card-decription'>
-               <li className=''>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-               <li className=''>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit onsectetur adipiscing elit</li>
+               <li className='card-description-list'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+               <li className='card-description-list'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit onsectetur adipiscing elit</li>
 
 
              </ul>

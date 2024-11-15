@@ -11,7 +11,7 @@ import Teacher from '../assets/images/teaching.jpg';
 import { Link } from 'react-router-dom';
 
 
-function ProductSlider() {
+function ProductSlider({ onViewClick }) {
   // Example data for products
   const products = [
     {
@@ -159,7 +159,7 @@ function ProductSlider() {
                   {/* Card Buttons */}
                   <div className="button-inline">
                     <button className="primary-button">Add to Cart</button>
-                    <button className="secondary-button">View</button>
+                    <button className="secondary-button" id="view-description" onClick={onViewClick}>View</button>
                   </div>
                 </div>
               </div>

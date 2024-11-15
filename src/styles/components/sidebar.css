@@ -10,7 +10,7 @@
     left: 25px; */
     margin-left: 25px;
     margin-bottom: 20px;
-    height: 100%;
+    height: fit-content;
     max-height: 900px;  
     overflow-y: scroll;
     scrollbar-width: thin; /* For Firefox */

@@ -170,11 +170,11 @@ useEffect(() => {
                     <ul className=' login-panel'>
                       <li className='menu-link-box'>
                         <ProfileIcon style={{ marginRight: '10px' }} className='menu-icon' />
-                        <Link to="#" className="menu-link">Profile</Link>
+                        <Link to="/user-edit" className="menu-link">Profile</Link>
                       </li>
                       <li className='menu-link-box'>
                         <LogoutIcon style={{ marginRight: '10px' }} className='menu-icon' />
-                        <Link to="#" className="menu-link">Logout</Link>
+                        <Link to="/" className="menu-link">Logout</Link>
                       </li>
                     </ul>
                   )}
