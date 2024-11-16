@@ -931,17 +931,39 @@ padding: 10px;
   grid-template-columns: 1fr 1fr;  /* Two equal columns */
   gap: 20px;                       /* Space between the columns */
 }
-
+.enquiry-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* Two equal columns */
+  gap: 20px;  
+}
 /* Media query for screens 768px and smaller */
+@media (max-width: 968px) {
+  .enquiry-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;  /* Two equal columns */
+    gap: 20px;  
+  }
+}
+
 @media (max-width: 768px) {
   .booking-grid-box {
     grid-template-columns: 1fr;    /* Switch to one column */
     place-items: center;
   }
+  
+}
+@media (max-width: 568px) {
+  
+  .enquiry-grid{
+    display: grid;
+    grid-template-columns: 1fr  ;  /* Two equal columns */
+    gap: 20px;  
+  }
 }
 /* Webkit browsers (Chrome, Safari) */
 .booking-grid-box::-webkit-scrollbar {
   width: 10px; /* Width of the scrollbar */
+  height: 10px;
 }
 
 .booking-grid-box::-webkit-scrollbar-track {
@@ -964,8 +986,9 @@ padding: 10px;
   border-radius: 20px;
   border: 1px solid #EAE3E3;
   background: var(--white);
-  max-width: 420px;
+  max-width: 400px;
   min-width: 300px;
+  
 }
 .user-service-card{
   border: none !important;
@@ -1034,4 +1057,35 @@ padding: 10px;
 .pd-enquiry-carousel-box .swiper-pagination {
   bottom: -20px !important; /* Move the pagination 20px below the default position */
   position: unset;
+}
+.booking-datas li b{
+  color: #000000;
+}
+.user-service-card-date .user-service-card-date-item span,
+.user-service-card-date .user-service-card-date-item p{
+ font-size: 12px;
+ font-weight: 700;
+ 
+}
+.enquiry-btn , .pending-btn , .rejected-btn{
+  padding: 10px 15px;
+  width: fit-content;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0C5401;
+  background: #BEFFCC;
+}
+.pending-btn{
+  background: #FFB8CE;
+  color: #B51144;
+}
+.rejected-btn{
+  background: #FFD2D2;
+  color: #FF0000;
+}
+.view-detail-btn{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-color);
 }

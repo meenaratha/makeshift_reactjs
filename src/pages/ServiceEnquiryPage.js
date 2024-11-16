@@ -26,7 +26,7 @@ function ServiceEnquiryPage() {
              </div>
               
               <div className='booking-card-box'>
-                 <div className='booking-grid-box'>
+                 <div className='booking-grid-box enquiry-grid'>
                    <ServiceEnquiryCard/>
                  </div>
               </div>

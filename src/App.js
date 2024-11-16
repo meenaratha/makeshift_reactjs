@@ -27,6 +27,7 @@ import InstandBookingPage from './pages/InstandBookingPage';
 import ScheduledBookingPage from './pages/ScheduledBookingPage';
 import PDEnquiryPage from './pages/PDEnquiryPage';
 import ServiceEnquiryPage from './pages/ServiceEnquiryPage';
+import ServicePopup from './components/ServicePopup';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           <Route path="/list-of-service-booking" element={<ListOfServiceBooking/>} />
           <Route path="/picker-service-booking" element={<PickerListService/>} />
 
+          <Route path="/service-popup" element={<ServicePopup/>} />
 
 
 

@@ -15,6 +15,8 @@ import Tauter from '../components/Tauter';
 // import OtpPopup from '../components/OtpPopup';
 // import BookingConfirmPopup from '../components/BookingConfirmPopup';
 // import SuccessPopup from '../components/SuccessPopup';
+// import feedback from '../components/FeedbackPopup';
+
 
 import React, { useState } from 'react';
 function Home() {
@@ -32,6 +34,7 @@ function Home() {
   return (
     <>
       <div className='wrapper'>
+       
         <Herosection/>
         <Services/>
         <ProductSlider onViewClick={handleViewClick} />

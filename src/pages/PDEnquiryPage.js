@@ -26,8 +26,8 @@ function PDEnquiryPage() {
                 </ul>
              </div>
               
-              <div className='booking-card-box'>
-                 <div className='booking-grid-box'>
+              <div className='booking-card-box' style={{ maxWidth:'100%' }}>
+                 <div className='booking-grid-box enquiry-grid'>
                     <PDEnquiryCard/>
                  </div>
               </div>

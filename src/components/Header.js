@@ -2,6 +2,7 @@ import '../styles/components/header.css';
 import HomeLogo from '../assets/logo/header_logo.jpg';
 import React, { useState, useEffect, useRef } from 'react'; // Only one import for React
 import { Link } from 'react-router-dom';
+import CategoryPopup from './CategoryPopup';
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,6 +47,17 @@ function Header() {
     };
   }, []);
 
+
+  const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
+
+  const handleCategoryClick = () => {
+    setIsCategoryPopupOpen(true); // Open the popup when Categories link is clicked
+  };
+
+  const handleClosePopup = () => {
+    setIsCategoryPopupOpen(false); // Close the popup when close button is clicked
+  };
+
   return (
     <>
       <header className={isSticky ? 'sticky-header' : ''}>
@@ -61,10 +73,10 @@ function Header() {
                   <Link to="/" className="menu-link">Home</Link>
                 </li>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Categories</Link>
+                  <Link to="#" className="menu-link" onClick={handleCategoryClick} >Categories</Link>
                 </li>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Booking History</Link>
+                  <Link to="/instand-booking" className="menu-link">Booking History</Link>
                 </li>
               </ul>
 
@@ -78,13 +90,13 @@ function Header() {
                       <i className="material-icons">home</i>
                       <Link to="/" className="menu-link">Home</Link>
                     </li>
-                    <li className='menu-link-box'>
+                    <li className='menu-link-box' onClick={handleCategoryClick} >
                       <i className="material-icons">category</i>
                       <Link to="#" className="menu-link">Categories</Link>
                     </li>
                     <li className='menu-link-box'>
                       <i className="material-icons">calendar_today</i>
-                      <Link to="#" className="menu-link">Booking History</Link>
+                      <Link to="/instand-booking" className="menu-link">Booking History</Link>
                     </li>
                     <li className='menu-link-box '>
                     <i className="material-icons">person</i>
@@ -132,6 +144,8 @@ function Header() {
           </div>
         </div>
       </header>
+
+      {isCategoryPopupOpen && <CategoryPopup handleClosePopup={handleClosePopup} />}
     </>
   );
 }

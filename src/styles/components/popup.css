@@ -347,3 +347,72 @@
   .success-close-btn:hover {
     background-color: #e04a55;
   }
+  .service-model{
+z-index: 5;
+overflow-y: auto;
+scrollbar-width: 0px;
+
+  }
+  .service-model::-webkit-scrollbar{
+    display: none;
+  }
+  .service-row .user-category-item p.active{
+    color: var(--primary-color);
+  }
+  .service-modal-content{
+    max-width: 690px;
+    min-width: 300px;
+    align-items: normal;
+    
+  }
+  .service-row{
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: 0px;
+  }
+  .service-row::-webkit-scrollbar{
+    display: none;
+  }
+  .service-row .user-category-item  {
+    text-align: center;
+    max-width: 90px;
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.service-item{
+  cursor: pointer;
+}
+.category-row .user-category-item {
+  text-align: center;
+  max-width: 90px;
+  min-width: 90px;
+}
+.service-row .user-category-item  .user-category-svg.active{
+  background: #f2dae2;
+
+}
+.category-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns by default */
+  gap: 20px; /* Adjust the space between the grid items */
+}
+
+@media (max-width: 568px) {
+  .category-row {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+  }
+  .category-row .user-category-item {
+    text-align: center;
+    max-width: 70px;
+    min-width: 70px;
+}
+}
+.service-popup-close{
+  top: 5px;
+  right: 5px;
+}
