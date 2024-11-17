@@ -37,7 +37,7 @@ function Home() {
        
         <Herosection/>
         <Services/>
-        <ProductSlider onViewClick={handleViewClick} />
+        <ProductSlider onViewClick={handleViewClick}   />
       {showDescription && <ProductDescription onCloseClick={handleCloseClick} />}
        <BannerCardSlider/>
        <FactoryProductSlider/>

@@ -3,9 +3,9 @@ import UserboardHeader from '../components/UserboardHeader';
 
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import PDEnquiryCard from '../components/PDEnquiryCard';
+import CompletedBookingCard from '../components/CompletedBookingCard';
 
-function PDEnquiryPage() {
+function CompleteBookingPage() {
   return (
     <>
        <div className='wrapper'>
@@ -16,20 +16,19 @@ function PDEnquiryPage() {
             <div className='page-body'>
              <div className='booking-menu-box'>
                 <ul className='booking-menu-container'>
-                <li className='booking-menu-item '><Link to="/instand-booking" className='booking-menu-link'>Instant Booking</Link></li>
+                    <li className='booking-menu-item '><Link to="/instand-booking" className='booking-menu-link'>Instant Booking</Link></li>
                     <li className='booking-menu-item'><Link to="/scheduled-booking" className='booking-menu-link'>Schedule Booking</Link></li>
-                    <li className='booking-menu-item '><Link to="/complete-booking" className='booking-menu-link'>Completed</Link></li>
+                    <li className='booking-menu-item booking-active-menu'><Link to="/complete-booking" className='booking-menu-link'>Completed</Link></li>
                     <li className='booking-menu-item'><Link to="/cancel-booking" className='booking-menu-link'>Canceled</Link></li>
-                    <li className='booking-menu-item booking-active-menu'><Link to="/pd-enquiry" className='booking-menu-link'>P & D Enquiry</Link></li>
-                    <li className='booking-menu-item  '><Link to="/service-enquiry" className='booking-menu-link'>Service Enquiry</Link></li>
-
+                    <li className='booking-menu-item '><Link to="/pd-enquiry" className='booking-menu-link'>P & D Enquiry</Link></li>
+                    <li className='booking-menu-item'><Link to="/service-enquiry" className='booking-menu-link'>Service Enquiry</Link></li>
 
                 </ul>
              </div>
               
-              <div className='booking-card-box' style={{ maxWidth:'100%' }}>
-                 <div className='booking-grid-box enquiry-grid'>
-                    <PDEnquiryCard/>
+              <div className='booking-card-box' style={{ maxWidth:'900px' }}>
+                 <div className='booking-grid-box '>
+                  <CompletedBookingCard/>
                  </div>
               </div>
 
@@ -42,4 +41,4 @@ function PDEnquiryPage() {
   )
 }
 
-export default PDEnquiryPage
+export default CompleteBookingPage

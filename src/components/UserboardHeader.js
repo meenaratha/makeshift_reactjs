@@ -115,7 +115,7 @@ const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
               {/* NAVIBAR */}
               <ul className='navibar desktop-menu-box'>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Home</Link>
+                  <Link to="/" className="menu-link">Home</Link>
                 </li>
                 <li className='menu-link-box' onClick={handleCategoryClick}>
                   <Link to="#" className="menu-link">Categories</Link>

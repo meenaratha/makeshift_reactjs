@@ -28,6 +28,8 @@ import ScheduledBookingPage from './pages/ScheduledBookingPage';
 import PDEnquiryPage from './pages/PDEnquiryPage';
 import ServiceEnquiryPage from './pages/ServiceEnquiryPage';
 import ServicePopup from './components/ServicePopup';
+import CompleteBookingPage from './pages/CompleteBookingPage';
+import CancelBookingPage from './pages/CancelBookingPage';
 
 function App() {
   return (
@@ -41,6 +43,9 @@ function App() {
           <Route path="/user-edit" element={<UserEditPage/>} />
           <Route path="/instand-booking" element={<InstandBookingPage/>} />
           <Route path="/scheduled-booking" element={<ScheduledBookingPage/>} />
+          <Route path="/complete-booking" element={<CompleteBookingPage/>} />
+          <Route path="/cancel-booking" element={<CancelBookingPage/>} />
+
           <Route path="/pd-enquiry" element={<PDEnquiryPage/>} />
           <Route path="/service-enquiry" element={<ServiceEnquiryPage/>} />
 

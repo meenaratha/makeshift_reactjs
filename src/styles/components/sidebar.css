@@ -26,7 +26,7 @@
     transform: translateX(-320px);
 }
 
-/* * Customize scrollbar for Webkit browsers */ */
+/* * Customize scrollbar for Webkit browsers */ 
 .userboard-sidebar::-webkit-scrollbar {
     width: 4px !important; /* Scrollbar width */
     display: none;

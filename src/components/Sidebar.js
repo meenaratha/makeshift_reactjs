@@ -34,7 +34,7 @@ function Sidebar() {
             <span>Edit Profile</span></Link>    
         </li>
         <li className='userboard-menu-list'>
-        <Link to="/" className='userboard-link'>
+        <Link to="/instand-booking" className='userboard-link'>
             <BookHistory  className="userboard-menu-icon" />
             <span>Booking History</span>
             </Link>

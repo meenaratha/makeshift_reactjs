@@ -87,7 +87,7 @@ function ProductSlider({ onViewClick }) {
     
     <div className="product-slider-sec">
       <div className="container">
-      <div className='display-inline sec-head-box'>
+      <div className='display-inline sec-head-box' style={{paddingTop:'30px'}}>
         <h2 className='sec-head'>Most Popular Service</h2>
         <Link to="" className="sec-head-link">See all</Link>
        </div>
@@ -95,7 +95,7 @@ function ProductSlider({ onViewClick }) {
         <Swiper
         className="product-swiper"
           grabCursor={true}  // This enables the drag cursor
-          spaceBetween={10}
+          spaceBetween={20}
           slidesPerView={1} // Default on mobile devices
           breakpoints={{
             600: { slidesPerView: 2 }, // For tablets, show 2 items

@@ -411,7 +411,7 @@ padding: 20px;
 .share-section {
   text-align: center;
   margin-top: 20px;
-  border-bottom: 2px dotted #DADADA;
+  /* border-bottom: 2px dotted #DADADA; */
 }
 .share-button {
   padding: 10px 20px;
@@ -1088,4 +1088,55 @@ padding: 10px;
   font-size: 14px;
   font-weight: 700;
   color: var(--primary-color);
+}
+.amount-display , .download-btn{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.download-btn{  
+  padding-left: 10px;
+
+}
+.amount-display {
+  text-wrap-mode: nowrap;
+}
+.amount-display p{
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+}
+.amount-display span{
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.download-btn p{
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 700;
+}
+.user-complete-btn , .user-cancel-btn{
+  background-color: #D6D3FF;
+  color: #070154;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 10px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.user-cancel-btn{
+  background-color: #D6D3FF;
+  color: #070154;
+}
+.complete-booking-image {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
 }
