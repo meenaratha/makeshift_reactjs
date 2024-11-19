@@ -19,18 +19,20 @@ import Tauter from '../components/Tauter';
 
 
 import React, { useState } from 'react';
+import PrizelessProductDescription from '../components/PrizelessProductDescription';
 function Home() {
 
-  const [showDescription, setShowDescription] = useState(false); // Shared state for visibility
+ // State to track which description is shown
+ const [activeDescription, setActiveDescription] = useState(null);
 
-  const handleViewClick = () => {
-    setShowDescription(true); // Show the description component
-  };
+ // Handlers for opening and closing the descriptions
+ const handleViewClick = (descriptionType) => {
+   setActiveDescription(descriptionType); // Show the respective description
+ };
 
-  const handleCloseClick = () => {
-    setShowDescription(false); // Hide the description component
-  };
-
+ const handleCloseClick = () => {
+   setActiveDescription(null); // Hide the description component
+ };
   return (
     <>
       <div className='wrapper'>
@@ -38,7 +40,14 @@ function Home() {
         <Herosection/>
         <Services/>
         <ProductSlider onViewClick={handleViewClick}   />
-      {showDescription && <ProductDescription onCloseClick={handleCloseClick} />}
+    
+    {/* Conditionally render description components based on activeDescription state */}
+    {activeDescription === 'cart' && (
+          <ProductDescription onCloseClick={handleCloseClick} />
+        )}
+        {activeDescription === 'enquiry' && (
+          <PrizelessProductDescription  onCloseClick={handleCloseClick} />
+        )}
        <BannerCardSlider/>
        <FactoryProductSlider/>
        <ShopSlider/>

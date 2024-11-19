@@ -110,7 +110,7 @@ const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
             <div className='header-bg'>
              
               <div className='logo-box'>
-                <a href=''><img src={HomeLogo} alt="Home Logo" /></a>
+                <a href='/makeshift'><img src={HomeLogo} alt="Home Logo" /></a>
               </div>
               {/* NAVIBAR */}
               <ul className='navibar desktop-menu-box'>
@@ -204,7 +204,7 @@ const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
       <ul className="footer-mobile-panel" >
       <li className="menu-link-box">
         <i className="material-icons">home</i>
-        <Link to="/makeshift" className="menu-link">Home</Link>
+        <Link to="" className="menu-link">Home</Link>
       </li>
       <li className="menu-link-box" onClick={handleCategoryClick}>
         <i className="material-icons">category</i>

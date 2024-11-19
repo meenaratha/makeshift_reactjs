@@ -77,7 +77,8 @@
     justify-content: center;
     align-items: center;
   }
-  .userReport-submitButton {
+  .userReport-enquiryButton,
+    .userReport-submitButton{
     padding: 10px;
     font-size: 14px;
     font-weight: 700;
@@ -89,6 +90,9 @@
     cursor: pointer;
     text-align: center;
     margin-top: 20px;
+  }
+  .userReport-enquiryButton{
+    background: rgba(77, 33, 97, 1);
   }
   .userprofile-box{
     display: flex;

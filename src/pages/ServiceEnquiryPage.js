@@ -16,7 +16,6 @@ function ServiceEnquiryPage() {
              <div className='booking-menu-box'>
                 <ul className='booking-menu-container'>
                 <li className='booking-menu-item '><Link to="/instand-booking" className='booking-menu-link'>Instant Booking</Link></li>
-                    <li className='booking-menu-item'><Link to="/scheduled-booking" className='booking-menu-link'>Schedule Booking</Link></li>
                     <li className='booking-menu-item '><Link to="/complete-booking" className='booking-menu-link'>Completed</Link></li>
                     <li className='booking-menu-item'><Link to="/cancel-booking" className='booking-menu-link'>Canceled</Link></li>
                     <li className='booking-menu-item '><Link to="/pd-enquiry" className='booking-menu-link'>P & D Enquiry</Link></li>

@@ -140,7 +140,7 @@ function Login() {
           </p>
 
           <p className='sign-link'>
-            Are you Become Employee ?<Link to="/" className='forget-link'> Click here</Link>
+            Are you Become Employee ?<Link to="" className='forget-link'> Click here</Link>
           </p>
         </div>
       </div>

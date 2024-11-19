@@ -208,7 +208,16 @@
   background: var(--white);
   box-shadow: 0px 2.66px 2.52px 0px #B6B6B640;
 }
-
+.enquiry-card{
+  display: flex;
+    flex-direction: column;
+    max-width: 325px;
+    height: 490px;
+    border-radius: 15px;
+    border: 1.3px solid #EAEAEA;
+    background: var(--white);
+    box-shadow: 0px 2.66px 2.52px 0px #B6B6B640;
+}
 .product-card-heading {
   font-size: var(--card-head-font-size);
   font-weight: 700;
@@ -310,6 +319,7 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.94px;
+  margin-bottom: 10px;
 }
 
 .d-flex {

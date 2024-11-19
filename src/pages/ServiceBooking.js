@@ -23,27 +23,48 @@ function ServiceBooking() {
               <div className='user-page-two-col-container'>
           <div className='user-page-item '>
           <div className='user-service-card-container'>
-          <div class="user-service-card">
-  <div class="user-service-card-header">
-    <h2 class="user-service-title">Packer Service</h2>
-    <span class="user-service-reviews">(44k reviews)</span>
-   
-  </div>
-  
-  <div class="user-service-card-body">
-    <div class="user-service-info">
-      <p>Working per day: <span class="user-price">₹ 900</span></p>
-      <p>Working per Hour: <span class="user-price">₹ 200</span></p>
-    </div>
-    <div class="user-service-image">
-    <div class="user-service-rating">
-      <span>★ 4.5</span>
-    </div>
-      <img src={Service_img} alt="Packer Service Image" />
-      <button class="user-add-btn">Add</button>
-    </div>
-  </div>
-  
+          <div class="border-card">
+
+          <table className="user-service-card-header" style={{ width: '100%', borderCollapse: 'separate', borderSpacing: '0 10px' }}>
+  <tbody>
+    <tr style={{display:'flex', justifyContent:'space-between', paddingBottom:'10px'}}>
+      <td >
+        <h2 className="user-service-title">Picker Service</h2>
+      </td><td></td>
+      <td>
+        <span className="user-service-reviews" style={{ fontSize: '10px' }}>(44k reviews)</span>
+      </td>
+    </tr>
+
+    
+
+    <tr className="user-service-card-body" style={{borderBottom:'1.5px dotted #D4D4D4',  display:'flex', alignItems:'center'}}>
+      <td className="user-service-info" style={{ display:'flex', flexDirection:'column', gap:'10px', width:'50%'  }}>
+        <p style={{paddingBottom:'5px' , textWrap:'nowrap'}}>Working per day:</p>
+        <p style={{paddingBottom:'5px' , textWrap:'nowrap'}}>Working per day:</p>
+
+
+      </td>
+      <td style={{ display:'flex', flexDirection:'column', gap:'10px' , width:'50%', paddingLeft:'10px' }}>
+        <span className="user-price" >₹ 900</span>
+        <span className="user-price">₹ 900</span>
+
+      </td>
+      <td style={{ }}>
+        <div className="user-service-image">
+          <div className="user-service-rating">
+            <span>★ 4.5</span>
+          </div>
+          <img src={Service_img} alt="Packer Service Image" />
+        </div>
+      </td>
+    </tr>
+    <tr>
+    
+    </tr>
+  </tbody>
+</table>
+
   <div class="user-service-card-footer">
     <ul class="user-service-description">
         <li>Responsible for selecting items from the warehouse shelves based on customer orders</li>
