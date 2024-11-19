@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import './styles/components/body.css';
 import './styles/components/header.css';
@@ -15,15 +14,48 @@ import Signin from './components/Signin';
 import OtpVerification from './components/OtpVerification';
 import FeedbackPopup from './components/FeedbackPopup';
 import ListOfServices from './pages/ListOfServices';
+import ServiceBooking from './pages/ServiceBooking';
+import ListOfServiceBooking from './pages/ListOfServiceBooking';
+import PickerListService from './pages/PickerListService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Notification from './pages/Notification';
+import PasswordChange from './pages/PasswordChange';
+import UserEditPage from './pages/UserEditPage';
+import UserHome from './pages/UserHome';
+import InstandBookingPage from './pages/InstandBookingPage';
+import ScheduledBookingPage from './pages/ScheduledBookingPage';
+import PDEnquiryPage from './pages/PDEnquiryPage';
+import ServiceEnquiryPage from './pages/ServiceEnquiryPage';
+import ServicePopup from './components/ServicePopup';
+import CompleteBookingPage from './pages/CompleteBookingPage';
+import CancelBookingPage from './pages/CancelBookingPage';
+import SlotNotes from './components/SlotNotes';
 
 function App() {
   return (
     <>
-       <Router>
+       <Router >
         {/* Route Definitions */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/user-report" element={<UserReportPage/>} />
+          <Route path="/makeshift" element={<Home />} />
+          <Route path="/user-home" element={<UserHome />} />
+
+          <Route path="/user-edit" element={<UserEditPage/>} />
+          <Route path="/instand-booking" element={<InstandBookingPage/>} />
+          <Route path="/scheduled-booking" element={<ScheduledBookingPage/>} />
+          <Route path="/complete-booking" element={<CompleteBookingPage/>} />
+          <Route path="/cancel-booking" element={<CancelBookingPage/>} />
+
+          <Route path="/pd-enquiry" element={<PDEnquiryPage/>} />
+          <Route path="/service-enquiry" element={<ServiceEnquiryPage/>} />
+
+
+
+          <Route path="/notification" element={<Notification/>} />
+          <Route path="/change-password" element={<PasswordChange/>} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+
+         <Route path="/user-report" element={<UserReportPage/>} />
           <Route path="/description" element={<ProductDescription/>} />
           <Route path="/component" element={<Card/>} />
           <Route path="/login" element={<Login/>} />
@@ -32,6 +64,14 @@ function App() {
           <Route path="/otp-verification" element={<OtpVerification/>} />
           <Route path="/feedback" element={<FeedbackPopup/>} />
           <Route path="/list-of-services" element={<ListOfServices/>} />
+          <Route path="/service-booking" element={<ServiceBooking/>} />
+          <Route path="/list-of-service-booking" element={<ListOfServiceBooking/>} />
+          <Route path="/picker-service-booking" element={<PickerListService/>} />
+
+          <Route path="/service-popup" element={<ServicePopup/>} />
+
+          <Route path="/slotnote-popup" element={<SlotNotes/>} />
+
 
 
 

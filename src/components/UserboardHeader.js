@@ -8,6 +8,7 @@ import { toggleSidebar } from '../store/sidebarSlice';
 
 import { ReactComponent as ProfileIcon } from '../assets/images/gg_profile.svg';
 import { ReactComponent as LogoutIcon } from '../assets/images/solar_logout-3-bold.svg';
+import CategoryPopup from './CategoryPopup';
 
 function UserboardHeader() {
   const dispatch = useDispatch();
@@ -52,6 +53,8 @@ function UserboardHeader() {
   }, []);
 
 
+  
+
   const [searchQuery, setSearchQuery] = useState(''); // State to track the input
   const [isTyping, setIsTyping] = useState(false); // State to track if the user is typing
   // Handle change in search input
@@ -87,6 +90,18 @@ useEffect(() => {
 }, []); // Empty dependency array ensures this runs only once on mount and unmount
 
 
+
+const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
+
+  const handleCategoryClick = () => {
+    setIsCategoryPopupOpen(true); // Open the popup when Categories link is clicked
+  };
+
+  const handleClosePopup = () => {
+    setIsCategoryPopupOpen(false); // Close the popup when close button is clicked
+  };
+
+
   return (
     <>
        <header className={isSticky ? 'sticky-header' : ''}>
@@ -100,13 +115,13 @@ useEffect(() => {
               {/* NAVIBAR */}
               <ul className='navibar desktop-menu-box'>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Home</Link>
+                  <Link to="/makeshift" className="menu-link">Home</Link>
                 </li>
-                <li className='menu-link-box'>
+                <li className='menu-link-box' onClick={handleCategoryClick}>
                   <Link to="#" className="menu-link">Categories</Link>
                 </li>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Booking History</Link>
+                  <Link to="/instand-booking" className="menu-link">Booking History</Link>
                 </li>
               </ul>
 
@@ -170,11 +185,11 @@ useEffect(() => {
                     <ul className=' login-panel'>
                       <li className='menu-link-box'>
                         <ProfileIcon style={{ marginRight: '10px' }} className='menu-icon' />
-                        <Link to="#" className="menu-link">Profile</Link>
+                        <Link to="/user-edit" className="menu-link">Profile</Link>
                       </li>
                       <li className='menu-link-box'>
                         <LogoutIcon style={{ marginRight: '10px' }} className='menu-icon' />
-                        <Link to="#" className="menu-link">Logout</Link>
+                        <Link to="/" className="menu-link">Logout</Link>
                       </li>
                     </ul>
                   )}
@@ -184,19 +199,20 @@ useEffect(() => {
           </div>
         </div>
       </header>
+      {isCategoryPopupOpen && <CategoryPopup handleClosePopup={handleClosePopup} />}
 
       <ul className="footer-mobile-panel" >
       <li className="menu-link-box">
         <i className="material-icons">home</i>
-        <Link to="#" className="menu-link">Home</Link>
+        <Link to="/makeshift" className="menu-link">Home</Link>
       </li>
-      <li className="menu-link-box">
+      <li className="menu-link-box" onClick={handleCategoryClick}>
         <i className="material-icons">category</i>
         <Link to="#" className="menu-link">Categories</Link>
       </li>
       <li className="menu-link-box">
         <i className="material-icons">calendar_today</i>
-        <Link to="#" className="menu-link">Booking History</Link>
+        <Link to="/instand-booking" className="menu-link">Booking History</Link>
       </li>
     </ul>
     </>

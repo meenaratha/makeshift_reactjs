@@ -11,7 +11,7 @@ import Teacher from '../assets/images/teaching.jpg';
 import { Link } from 'react-router-dom';
 
 
-function ProductSlider() {
+function ProductSlider({ onViewClick }) {
   // Example data for products
   const products = [
     {
@@ -87,7 +87,7 @@ function ProductSlider() {
     
     <div className="product-slider-sec">
       <div className="container">
-      <div className='display-inline sec-head-box'>
+      <div className='display-inline sec-head-box' style={{paddingTop:'30px'}}>
         <h2 className='sec-head'>Most Popular Service</h2>
         <Link to="" className="sec-head-link">See all</Link>
        </div>
@@ -95,7 +95,7 @@ function ProductSlider() {
         <Swiper
         className="product-swiper"
           grabCursor={true}  // This enables the drag cursor
-          spaceBetween={10}
+          spaceBetween={20}
           slidesPerView={1} // Default on mobile devices
           breakpoints={{
             600: { slidesPerView: 2 }, // For tablets, show 2 items
@@ -159,7 +159,7 @@ function ProductSlider() {
                   {/* Card Buttons */}
                   <div className="button-inline">
                     <button className="primary-button">Add to Cart</button>
-                    <button className="secondary-button" id='view-description'>View</button>
+                    <button className="secondary-button" id="view-description" onClick={onViewClick}>View</button>
                   </div>
                 </div>
               </div>

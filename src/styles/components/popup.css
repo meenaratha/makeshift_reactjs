@@ -12,6 +12,13 @@
     align-items: center;
     z-index: 2;
     padding: 20px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Minimum height of 100% of the viewport height */
+  width: 100%;      /* Full width */
+  padding: 10px;
+  box-sizing: border-box;  /* Include padding in the width/height calculation */
   }
   
   /* Modal Content */
@@ -347,3 +354,197 @@
   .success-close-btn:hover {
     background-color: #e04a55;
   }
+  .service-model{
+z-index: 5;
+overflow-y: auto;
+scrollbar-width: 0px;
+
+  }
+  .service-model::-webkit-scrollbar{
+    display: none;
+  }
+  .service-row .user-category-item p.active{
+    color: var(--primary-color);
+  }
+  .service-modal-content{
+    max-width: 690px;
+    min-width: 300px;
+    align-items: normal;
+    
+  }
+  .service-row{
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: 0px;
+  }
+  .service-row::-webkit-scrollbar{
+    display: none;
+  }
+  .service-row .user-category-item  {
+    text-align: center;
+    max-width: 90px;
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.service-item{
+  cursor: pointer;
+}
+.category-row .user-category-item {
+  text-align: center;
+  max-width: 90px;
+  min-width: 90px;
+}
+.service-row .user-category-item  .user-category-svg.active{
+  background: #f2dae2;
+
+}
+.category-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns by default */
+  gap: 20px; /* Adjust the space between the grid items */
+}
+
+@media (max-width: 568px) {
+  .category-row {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+  }
+  .category-row .user-category-item {
+    text-align: center;
+    max-width: 70px;
+    min-width: 70px;
+}
+}
+.service-popup-close{
+  top: 5px;
+  right: 5px;
+}
+
+/* slot note */
+.slot-model-popup{
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000AD;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 20px;
+}
+
+.slot-note-container {
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 20px auto;
+}
+
+.slot-note-title {
+  color: #7b47d6;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Form Groups */
+.slot-note-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.slot-note-group {
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+.slot-note-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.slot-note-select {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #EDEDED;
+  box-shadow: 0px 0px 1.82px 1.07px #D7D7D740;
+  border-radius: 5px;
+  background-color: #ffff;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  height: 50px;
+}
+/* Placeholder option color */
+.slot-note-select .placeholder-option {
+  color: #ACACAC !important;
+}
+
+/* In case no class, you can target the first disabled option like this */
+.slot-note-select option:disabled {
+  color: #ACACAC;
+  font-size: 12px;
+}
+/* Hint Text */
+.slot-note-hint {
+  color: #c71c2c;
+  font-size: 12px;
+  text-align: left;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Button */
+.slot-note-button {
+  width: 150px;
+  padding: 12px;
+  background-color: #a10448;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.slot-note-button:hover {
+  background-color: #7e0336;
+}
+
+/* Responsive Styles */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .slot-note-form {
+    flex-direction: column;
+  }
+
+  .slot-note-group {
+    width: 100%;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .slot-note-title {
+    font-size: 20px;
+  }
+
+  .slot-note-button {
+    width: 100%;
+  }
+}

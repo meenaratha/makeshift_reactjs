@@ -2,6 +2,7 @@ import '../styles/components/header.css';
 import HomeLogo from '../assets/logo/header_logo.jpg';
 import React, { useState, useEffect, useRef } from 'react'; // Only one import for React
 import { Link } from 'react-router-dom';
+import CategoryPopup from './CategoryPopup';
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,6 +47,17 @@ function Header() {
     };
   }, []);
 
+
+  const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
+
+  const handleCategoryClick = () => {
+    setIsCategoryPopupOpen(true); // Open the popup when Categories link is clicked
+  };
+
+  const handleClosePopup = () => {
+    setIsCategoryPopupOpen(false); // Close the popup when close button is clicked
+  };
+
   return (
     <>
       <header className={isSticky ? 'sticky-header' : ''}>
@@ -53,18 +65,18 @@ function Header() {
           <div className='container'>
             <div className='header-bg'>
               <div className='logo-box'>
-                <a href=''><img src={HomeLogo} alt="Home Logo" /></a>
+                <a href='/makeshift'><img src={HomeLogo} alt="Home Logo" /></a>
               </div>
               {/* NAVIBAR */}
               <ul className='navibar desktop-menu-box'>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Home</Link>
+                  <Link to="/makeshift" className="menu-link">Home</Link>
                 </li>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Categories</Link>
+                  <Link to="#" className="menu-link" onClick={handleCategoryClick} >Categories</Link>
                 </li>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link">Booking History</Link>
+                  <Link to="/instand-booking" className="menu-link">Booking History</Link>
                 </li>
               </ul>
 
@@ -76,23 +88,29 @@ function Header() {
                   <ul className='mobile-panel' ref={mobilePanelRef}>
                     <li className='menu-link-box'>
                       <i className="material-icons">home</i>
-                      <Link to="#" className="menu-link">Home</Link>
+                      <Link to="/" className="menu-link">Home</Link>
                     </li>
-                    <li className='menu-link-box'>
+                    <li className='menu-link-box' onClick={handleCategoryClick} >
                       <i className="material-icons">category</i>
                       <Link to="#" className="menu-link">Categories</Link>
                     </li>
                     <li className='menu-link-box'>
                       <i className="material-icons">calendar_today</i>
-                      <Link to="#" className="menu-link">Booking History</Link>
+                      <Link to="/instand-booking" className="menu-link">Booking History</Link>
                     </li>
+                    <li className='menu-link-box '>
+                    <i className="material-icons">person</i>
+
+                  <Link to="/login" className="menu-link ">Login</Link>
+                  
+                </li>
                   </ul>
                 )}
               </ul>
 
               <ul className='navibar'>
                 <li className='menu-link-box '>
-                  <Link to="login" className="menu-link login-menu">
+                  <Link to="/login" className="menu-link login-menu">
                     <span className="material-icons">person</span>
                     <span>Login</span>
                     <span className="material-icons">expand_more</span>
@@ -126,6 +144,8 @@ function Header() {
           </div>
         </div>
       </header>
+
+      {isCategoryPopupOpen && <CategoryPopup handleClosePopup={handleClosePopup} />}
     </>
   );
 }

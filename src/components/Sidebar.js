@@ -29,36 +29,36 @@ function Sidebar() {
 
     <ul class="user-board">
         <li className='userboard-menu-list'>
-            <Link to="" className='userboard-link'>
+            <Link to="/user-edit" className='userboard-link'>
             <EditProfile className="userboard-menu-icon" />
             <span>Edit Profile</span></Link>    
         </li>
         <li className='userboard-menu-list'>
-        <Link to="" className='userboard-link'>
+        <Link to="/instand-booking" className='userboard-link'>
             <BookHistory  className="userboard-menu-icon" />
             <span>Booking History</span>
             </Link>
         </li>
         <li className='userboard-menu-list'>
-        <Link to="" className='userboard-link'>
+        <Link to="/notification" className='userboard-link'>
             <Notification  className="userboard-menu-icon" />
             <span>Notification</span>
             </Link>
         </li>
         <li className='userboard-menu-list'>
-        <Link to="" className='userboard-link'>
+        <Link to="/change-password" className='userboard-link'>
             <Password  className="userboard-menu-icon" />
             <span>Change Password</span>
             </Link>
         </li>
         <li className='userboard-menu-list'>
-        <Link to="" className='userboard-link'>
+        <Link to="/privacy-policy" className='userboard-link'>
             <Policy   className="userboard-menu-icon" />
             <span>Privacy Policy</span>
             </Link>
         </li>
         <li className='userboard-menu-list'>
-        <Link to="" className='userboard-link'>
+        <Link to="/user-report" className='userboard-link'>
             <Report  className="userboard-menu-icon" />
             <span>Report & Queries</span>
             </Link>

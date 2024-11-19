@@ -1,5 +1,6 @@
 import '../styles/components/form.css';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Login_img from '../assets/images/login_img.png';
 import { Link } from 'react-router-dom';
 
@@ -16,6 +17,8 @@ function Login() {
 
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -31,6 +34,9 @@ function Login() {
     if (validateForm()) {
       // Handle form submission logic here
       console.log('Form Submitted:', formData);
+
+      // Redirect to the user dashboard after successful validation
+      navigate('/user-home'); // Change to your dashboard route
     }
   };
 
@@ -121,7 +127,7 @@ function Login() {
             </div>
             
             <div className='field-button-container'>
-              <button type="submit" className='login-btn'>Login</button>
+              <button type="submit" className='login-btn' style={{marginTop:'0px'}}>Login</button>
             </div>
           </form>
 

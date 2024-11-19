@@ -16,6 +16,7 @@ import {ReactComponent as Books } from '../assets/images/icons/books.svg';
 import {ReactComponent as Plus } from '../assets/images/icons/plus.svg';
 import {ReactComponent as SmallStar } from '../assets/images/icons/material-symbols_star.svg';
 
+import { Link } from 'react-router-dom';
 
 
 
@@ -25,12 +26,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 
-function ProductDescription() {
+function ProductDescription({ onCloseClick }) {
   return (
     <>
       <div className='product-description-overlay'>
          <div className='product-desc-container'>
-         <button type="" className='product-desc-container-close'><span class="material-icons">close</span></button>
+         <button type="" 
+         className='product-desc-container-close'
+         onClick={onCloseClick}
+         ><span class="material-icons">close</span></button>
 
            <h2 className='product-description-head'>Description</h2>
           
@@ -110,7 +114,10 @@ function ProductDescription() {
 
                     {/* Card Buttons */}
                   <div className="button-flex" style={{ padding:' 15px 0px !important;',gap:'15px',justifyContent:'space-evenly' }}>
-                    <button className="primary-button" style={{width:'160px', margin:'0px', height:'45px',display:'flex', justifyContent:'center', alignItems:'center',gap:'10px' }}> <Books /><p>Book Service</p> </button>
+                    <Link  to="/service-booking" className="primary-button"
+                     style={{width:'160px', margin:'0px', height:'45px',display:'flex',
+                      justifyContent:'center', alignItems:'center',gap:'10px' }}> <Books /><p>Book Service</p> 
+                      </Link>
                     <button className="secondary-button" style={{ width:'160px',margin:'0px',background:' var(--primary-color);', height:'45px',display:'flex', justifyContent:'center', alignItems:'center',gap:'10px' }}><Plus /><p>Add to Cart</p> </button>
                   </div>
              </div>
@@ -322,7 +329,10 @@ function ProductDescription() {
               <div className='flex-wrap'>
                 {/* Card Buttons */}
                 <div className="button-flex" style={{ padding:' 15px 0px !important;',gap:'15px',justifyContent:'space-evenly' }}>
-                    <button className="primary-button" style={{width:'160px', margin:'0px', height:'45px',display:'flex', justifyContent:'center', alignItems:'center',gap:'10px' }}> <Books /><p>Book Service</p> </button>
+                    <Link  to="/service-booking" className="primary-button" 
+                    style={{width:'160px', margin:'0px', height:'45px',display:'flex', justifyContent:'center',
+                     alignItems:'center',gap:'10px' }}> <Books /><p>Book Service</p> 
+                     </Link>
                     <button className="secondary-button" style={{ width:'160px',margin:'0px',background:' var(--primary-color);', height:'45px',display:'flex', justifyContent:'center', alignItems:'center',gap:'10px' }}><Plus /><p>Add to Cart</p> </button>
                   </div>
               </div>
