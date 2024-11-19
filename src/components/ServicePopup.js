@@ -16,6 +16,7 @@ import House from '../assets/images/house.png';
 import Retail from '../assets/images/retailshop.png';
 import Mentor from '../assets/images/mentor.png';
 import PDenquiry from '../assets/images/pd_enquiry.png';
+import { Link } from 'react-router-dom';
 
 
 function ServicePopup({ handleClosePopup }) {
@@ -58,10 +59,10 @@ function ServicePopup({ handleClosePopup }) {
             </div> */}
             <p className='feedback-txt' style={{ textAlign:'left',padding:'15px 10px',fontSize:'16px',color:'#000000' ,marginTop:'10px'}}>Industry & Factory</p>
             <div className='category-row'>
-            <div class="user-category-item">
+            <Link to="/list-of-services" class="user-category-item">
             <Calculator className='user-category-svg'/>
             <p>Accounted</p>
-        </div>
+        </Link>
         <div class="user-category-item">
         <Wherehouse className='user-category-svg'/>
             <p>Warehouse associated</p>
