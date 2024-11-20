@@ -130,7 +130,7 @@ function Header() {
                   </Link>
                 </li>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link cart-menu">
+                  <Link to="/picker-service-booking" className="menu-link cart-menu">
                     <span className="material-icons">shopping_basket</span>
                   </Link>
                 </li>

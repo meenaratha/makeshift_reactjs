@@ -1,9 +1,22 @@
-import React from 'react'
 import UserboardHeader from '../components/UserboardHeader';
 import Footer from '../components/Footer';
 import Service_img from '../assets/images/service_list.jpg'
-
+import React, { useState } from 'react';
+import SuccessPopup from '../components/SuccessPopup';
 function PickerListService() {
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  // Function to show the modal
+  const handlePayNowClick = () => {
+    setIsModalVisible(true);  // Show the modal when Pay Now button is clicked
+  };
+
+  // Function to hide the modal
+  const handleCloseModal = () => {
+    setIsModalVisible(false);  // Hide the modal when it's clicked
+  };
+
   return (
     <>
        <div className='wrapper'>
@@ -339,7 +352,16 @@ function PickerListService() {
 
                             
                             <div className='button-inline' style={{justifyContent:'center'}}>
-               <button className='primary-button'>Pay Now </button>
+               <button className='primary-button'  onClick={handlePayNowClick}>Pay Now </button>
+
+
+               {/* Conditionally render the SuccessPopup component */}
+      {isModalVisible && (
+       
+          <SuccessPopup onClick={handleCloseModal} />
+       
+       
+      )}
             </div>
                            
                         </ul>

@@ -31,6 +31,7 @@ import CompleteBookingPage from './pages/CompleteBookingPage';
 import CancelBookingPage from './pages/CancelBookingPage';
 import SlotNotes from './components/SlotNotes';
 import EnquiryServiceBooking from './components/EnquiryServiceBooking';
+import PrizelessProductDescription from './components/PrizelessProductDescription';
 
 function App() {
   return (
@@ -58,6 +59,8 @@ function App() {
 
          <Route path="/user-report" element={<UserReportPage/>} />
           <Route path="/description" element={<ProductDescription/>} />
+          <Route path="/enquiry-product-description" element={<PrizelessProductDescription/>} />
+
           <Route path="/component" element={<Card/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/forgot" element={<ForgotPassword/>} />

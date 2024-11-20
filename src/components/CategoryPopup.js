@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import  '../styles/components/popup.css';
+import { Link } from 'react-router-dom';
 
 import {ReactComponent as Calculator } from '../assets/images/icons/calculate.svg';
 import {ReactComponent as Wherehouse } from '../assets/images/icons/werehouse.svg';
@@ -19,8 +20,8 @@ import PDenquiry from '../assets/images/pd_enquiry.png';
 function CategoryPopup({ handleClosePopup }) {
   return (
     <>
-     <div className="feedback-modal service-model active">
-          <div className="feedback-modal-content  service-modal-content">
+     <div className="service-model active">
+          <div className="  service-modal-content">
             {/* Close Button */}
             <button className="feedback-close-btn service-popup-close" onClick={handleClosePopup}>
         <i className="fas fa-times"></i>
@@ -56,45 +57,45 @@ function CategoryPopup({ handleClosePopup }) {
             </div>
             <p className='feedback-txt' style={{ textAlign:'left',padding:'15px 10px',fontSize:'16px',color:'#000000' ,marginTop:'10px'}}>Industry & Factory</p>
             <div className='category-row'>
-            <div class="user-category-item">
+            <Link   to="/list-of-services" class="user-category-item">
             <Calculator className='user-category-svg'/>
             <p>Accounted</p>
-        </div>
-        <div class="user-category-item">
+           </Link>
+        <Link to="/list-of-services" class="user-category-item">
         <Wherehouse className='user-category-svg'/>
             <p>Warehouse associated</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link  to="/list-of-services" class="user-category-item">
        
         <Document_write className='user-category-svg'/>
        
         <p>Document
         Writing</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link  to="/list-of-services" class="user-category-item">
         <System_work className='user-category-svg'/>
             <p>System Working</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link   to="/list-of-services" class="user-category-item">
         <Material_check className='user-category-svg'/>
             <p>Material checking</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link  to="/list-of-services" class="user-category-item">
         <House_keeping className='user-category-svg'/>
             <p>House keeping</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link  to="/list-of-services" class="user-category-item">
         <Packing_work className='user-category-svg'/>
             <p>Packing working</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link  to="/list-of-services" class="user-category-item">
         <Factory_work className='user-category-svg'/>
             <p>factory Worker</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link  to="/list-of-services" class="user-category-item">
         <Loading_helper className='user-category-svg'/>
             <p>loading helper</p>
-        </div>
+        </Link>
           {/*<div class="user-category-item">
         <Loading_helper className='user-category-svg'/>
             <p>loading helper</p>

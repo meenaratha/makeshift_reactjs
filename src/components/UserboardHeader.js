@@ -3,6 +3,7 @@ import HomeLogo from '../assets/logo/header_logo.jpg';
 import ProfilePic from '../assets/images/profile_pic.jpg';
 import React, { useState, useEffect, useRef } from 'react'; // Only one import for React
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../store/sidebarSlice';
 
@@ -102,6 +103,30 @@ const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
   };
 
 
+  // State to track the screen width
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Update state based on window size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 999); // Set to true for screens <= 768px
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize); // Add resize event listener
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Clean up the listener
+    };
+  }, []);
+
+
+
+ // Define style objects for hiding and showing the mobile menu box
+  const hidemobilemenuicon = { display: 'none' };
+  const showmobilemenuicon = { display: 'flex' };
+  // Check if the current route is '/list-of-services'
+  const mobileMenuIconDisplay = location.pathname === '/list-of-services'  || !isMobile ? hidemobilemenuicon : showmobilemenuicon;
   return (
     <>
        <header className={isSticky ? 'sticky-header' : ''}>
@@ -125,7 +150,7 @@ const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
                 </li>
               </ul>
 
-              <ul className='navibar mobile-menu-box' >
+              <ul className='navibar mobile-menu-box' style={mobileMenuIconDisplay}>
                 <button className='mobileMenu-open'  onClick={() => dispatch(toggleSidebar())}>
                   <i className="material-icons">menu</i>
                 </button>
@@ -148,7 +173,7 @@ const [isCategoryPopupOpen, setIsCategoryPopupOpen] = useState(false);
                   </Link>
                 </li>
                 <li className='menu-link-box'>
-                  <Link to="#" className="menu-link cart-menu">
+                  <Link to="/picker-service-booking" className="menu-link cart-menu">
                     <span className="material-icons">shopping_basket</span>
                   </Link>
                 </li>

@@ -14,7 +14,7 @@ import {ReactComponent as Loading_helper } from '../assets/images/icons/loader_h
 function IndustryCategory() {
   return (
     <div className='user-category-box'>
-       <h1>Responsive Grid Layout</h1>
+       <h1 style={{color:'rgba(70, 69, 69, 1)', fontWeight:'700'}}>Industry & Factory</h1>
     <div class="user-category-container">
         <div class="user-category-item">
             <Calculator className='user-category-svg'/>

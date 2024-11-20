@@ -1,3 +1,4 @@
+
 import '../styles/components/pages.css';
 import thumbnail1 from '../assets/images/thumbnail-img1.jpg';
 import thumbnail2 from '../assets/images/thumbnail2.jpg';
@@ -25,14 +26,14 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 
-function ProductDescription({ onCloseClick }) {
+function ServiceListProductDescription({ onClose }) {
   return (
     <>
-      <div className='product-description-overlay'>
+       <div className='product-description-overlay'>
          <div className='product-desc-container'>
          <button type="" 
          className='product-desc-container-close'
-         onClick={onCloseClick}
+         onClick={onClose}
          ><span class="material-icons">close</span></button>
 
            <h2 className='product-description-head'>Description</h2>
@@ -126,7 +127,7 @@ function ProductDescription({ onCloseClick }) {
              </div>
             </div>
             <p className='desc-note'>( Note: If you extend the working hours, you will be required to pay an additional amount for the extra hours )</p>
-             <div className='about-text'>
+             <div className='about-text' style={{textAlign:'left'}}>
               <h2>About us</h2>
               <ul>
                 <li>Responsible for selecting items from the warehouse shelves based on customer orders</li>
@@ -341,9 +342,8 @@ function ProductDescription({ onCloseClick }) {
               </div>
          </div>
       </div>
-     
     </>
   )
 }
 
-export default ProductDescription
+export default ServiceListProductDescription

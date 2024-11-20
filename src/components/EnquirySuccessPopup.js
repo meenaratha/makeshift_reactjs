@@ -1,7 +1,8 @@
 import React from 'react'
 import TickCircle from '../assets/images/mdi_tick-circle-outline.svg';
-function SuccessPopup({onClick}) {
+function EnquirySuccessPopup({onClick}) {
   return (
+    <>
     <div>
        <div className="feedback-modal active" onClick={onClick}>
      
@@ -17,7 +18,9 @@ function SuccessPopup({onClick}) {
 
         </div>
     </div>
+      
+    </>
   )
 }
 
-export default SuccessPopup
+export default EnquirySuccessPopup

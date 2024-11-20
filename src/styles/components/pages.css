@@ -295,6 +295,7 @@ align-items: center;
   gap:20px;
   justify-content: center;
   padding: 20px 15px;
+  text-align: left;
 }
 .flex-col{
   display: flex;
@@ -323,6 +324,7 @@ align-items: center;
 {
   padding: 20px  ;
   border-bottom: 2px dotted #DADADA;
+  text-align: left;
 }
 .about-text h2,   .inner-overview h2{
   font-size: 18px;
@@ -353,6 +355,7 @@ border:1px solid  #DADADA;
 background: #fff;
 border-radius: 5px;
 padding: 20px;
+text-align: left;
 }
 .overview-item .icon{
    padding: 5px;
@@ -613,8 +616,7 @@ margin: 0px !important;
 } */
 
 .user-overview, .user-category {
-  position: sticky;
-  top: 100px;
+  padding: 10px;
  
 }
 .user-service-note{
@@ -1223,4 +1225,56 @@ font-weight: 400;
     max-width: 100%;
     height: auto;
   }
+}
+
+
+/* picker service card */
+
+.service-card{
+  background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 4.64px 3.97px 14.11px 0px #66666640;
+    border: 0.66px solid #DADADA;
+    max-width: 440px;
+    min-width: 300px;
+    
+}
+.service-card-header 
+{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 20px;
+  padding-bottom: 5px;
+  gap:20px;
+}
+.user-service-info p 
+{
+  display: flex;
+  align-content: center;
+  gap: 20px;
+  text-align: left;
+}
+.service-card-left{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.service-card-content{
+  border-top: 1.34px solid rgba(212, 212, 212, 1);
+  padding: 20px;
+}
+.service-cards{
+  padding: 10px;
+}
+.enquiry-service-btn{
+  width: fit-content;
+  padding: 10px 25px;
+  border-radius: 10px;
+  background: rgba(77, 33, 97, 1);
+  color:#fff;
+  height: 55px;
+  font-size: 12px;
+  font-weight: 500;
+  
 }

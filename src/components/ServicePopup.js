@@ -63,41 +63,41 @@ function ServicePopup({ handleClosePopup }) {
             <Calculator className='user-category-svg'/>
             <p>Accounted</p>
         </Link>
-        <div class="user-category-item">
+        <Link to="/list-of-services" class="user-category-item">
         <Wherehouse className='user-category-svg'/>
             <p>Warehouse associated</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link to="/list-of-services" class="user-category-item">
        
         <Document_write className='user-category-svg'/>
        
         <p>Document
         Writing</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link to="/list-of-services" class="user-category-item">
         <System_work className='user-category-svg'/>
             <p>System Working</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link to="/list-of-services" class="user-category-item">
         <Material_check className='user-category-svg'/>
             <p>Material checking</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link to="/list-of-services" class="user-category-item">
         <House_keeping className='user-category-svg'/>
             <p>House keeping</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link to="/list-of-services" class="user-category-item">
         <Packing_work className='user-category-svg'/>
             <p>Packing working</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link to="/list-of-services" class="user-category-item">
         <Factory_work className='user-category-svg'/>
             <p>factory Worker</p>
-        </div>
-        <div class="user-category-item">
+        </Link>
+        <Link to="/list-of-services"  class="user-category-item">
         <Loading_helper className='user-category-svg'/>
             <p>loading helper</p>
-        </div>
+        </Link>
         {/* <div class="user-category-item">
         <Loading_helper className='user-category-svg'/>
             <p>loading helper</p>

@@ -17,6 +17,7 @@ import {ReactComponent as SmallStar } from '../assets/images/icons/material-symb
 
 import { Link } from 'react-router-dom';
 
+import { useState } from 'react';
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,15 +25,14 @@ import {  Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-
-function ProductDescription({ onCloseClick }) {
+function ServiceListPrizelessDescription({ handleClose  }) {
   return (
     <>
-      <div className='product-description-overlay'>
+ <div className='product-description-overlay'>
          <div className='product-desc-container'>
          <button type="" 
-         className='product-desc-container-close'
-         onClick={onCloseClick}
+         className='product-desc-container-close' onClick={ handleClose  } 
+       
          ><span class="material-icons">close</span></button>
 
            <h2 className='product-description-head'>Description</h2>
@@ -94,13 +94,13 @@ function ProductDescription({ onCloseClick }) {
              {/* prize box */}
              <div className='flex-col' style={{ maxWidth:'450px',minWidth:'300px', width:'450px' }}>
                 <div style={{ display:'flex',flexDirection:'row', gap:'15px', alignItems:'center', }}>
-                <h2 className='prod-head'>Picker Service </h2>
-                <span className='star-count'><YellowStar className='yellow-star'/>4.5</span>
+                <h2 className='prod-head'>Home False Ceiling</h2>
+                {/* <span className='star-count'><YellowStar className='yellow-star'/>4.5</span> */}
                 </div>
 
                 <span style={{ color:'#575757',fontSize:'12px' }}>(44k review )</span>
 
-                          <div className="card-text-box" style={{ paddingLeft:'0px', borderBottom:'none',paddingTop:'10px' }}>
+                          {/* <div className="card-text-box" style={{ paddingLeft:'0px', borderBottom:'none',paddingTop:'10px' }}>
                       <div className="text-inline" style={{ paddingBottom:'15px' , paddingTop:'10px'}}>
                         <p className="card-sub-head">Working Per Day</p>
                         <span className="prize">&#8377; 1000</span>
@@ -109,19 +109,16 @@ function ProductDescription({ onCloseClick }) {
                         <p className="card-sub-head">Working Per Hour</p>
                         <span className="prize">&#8377; 200</span>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Card Buttons */}
-                  <div className="button-flex" style={{ padding:' 15px 0px !important;',gap:'15px',justifyContent:'space-evenly' }}>
-                    <Link  to="/service-booking" className="primary-button"
+                  <div className="button-inline" style={{ padding:' 15px 0px !important;',gap:'15px',marginTop:'20px' }}>
+                    {/* <Link  to="/service-booking" className="primary-button"
                      style={{width:'160px', margin:'0px', height:'45px',display:'flex',
                       justifyContent:'center', alignItems:'center',gap:'10px' }}> <Books /><p>Book Service</p> 
-                      </Link>
-                    <Link to="/picker-service-booking" className="secondary-button"
-                     style={{ width:'160px',margin:'0px',background:' var(--primary-color);',
-                      height:'45px',display:'flex',
-                       justifyContent:'center', alignItems:'center',gap:'10px' }}>
-                        <Plus /><p>Add to Cart</p> </Link>
+                      </Link> */}
+                    <Link to="/enquiry-service-booking" className="secondary-button" style={{ width:'160px',margin:'0px',background:' var(--primary-color);', height:'45px',display:'flex', justifyContent:'center', alignItems:'center',gap:'10px' }}><p>Enquiry Now</p> 
+                    </Link>
                   </div>
              </div>
             </div>
@@ -332,18 +329,20 @@ function ProductDescription({ onCloseClick }) {
               <div className='flex-wrap'>
                 {/* Card Buttons */}
                 <div className="button-flex" style={{ padding:' 15px 0px !important;',gap:'15px',justifyContent:'space-evenly' }}>
-                    <Link  to="/service-booking" className="primary-button" 
-                    style={{width:'160px', margin:'0px', height:'45px',display:'flex', justifyContent:'center',
-                     alignItems:'center',gap:'10px' }}> <Books /><p>Book Service</p> 
-                     </Link>
-                    <button className="secondary-button" style={{ width:'160px',margin:'0px',background:' var(--primary-color);', height:'45px',display:'flex', justifyContent:'center', alignItems:'center',gap:'10px' }}><Plus /><p>Add to Cart</p> </button>
+                    
+                    <Link  Link  to="/enquiry-service-booking"    className="secondary-button" 
+                    style={{ width:'160px',margin:'0px',background:' var(--primary-color);', 
+                    height:'45px',display:'flex', justifyContent:'center',
+                     alignItems:'center',gap:'10px' }}>
+                        <p>Enquiry Now</p>
+                         </Link>
                   </div>
               </div>
          </div>
       </div>
-     
+      
     </>
   )
 }
 
-export default ProductDescription
+export default ServiceListPrizelessDescription

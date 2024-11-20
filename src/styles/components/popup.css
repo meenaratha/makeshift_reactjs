@@ -12,9 +12,7 @@
     align-items: center;
     z-index: 2;
     padding: 20px;
-    display: flex;
-  justify-content: center;
-  align-items: center;
+    
   min-height: 100vh; /* Minimum height of 100% of the viewport height */
   width: 100%;      /* Full width */
   padding: 10px;
@@ -547,4 +545,37 @@ scrollbar-width: 0px;
   .slot-note-button {
     width: 100%;
   }
+}
+
+
+/* category popup */
+/* category popup */
+.service-model {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background: #000000ad;
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex; /* Flexbox to center content */
+  justify-content: center;
+  align-items: center;
+}
+
+.service-modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 750px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ position: relative;
+  /* Ensure modal is scrollable and stays within viewport */
+  max-height: 80vh;
+  overflow-y: auto; /* Allows the content to scroll when it exceeds max-height */
 }
